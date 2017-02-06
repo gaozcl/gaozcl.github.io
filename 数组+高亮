@@ -1,0 +1,19 @@
+    //按钮高亮
+    function pnull(domClass){
+        var a = [];
+        var i = 0 ;
+        $(domClass).each(function function_name (argument) {
+            a[i] = $(this).val().length;
+            i = i +1;
+        })
+        var result = 1;
+        for ( index = 0, len = a.length; index < len; ++index) {
+            result *= a[index];
+        }
+        if(result==0){$('#login_btn').addClass('default-btn').removeClass('focus-btn');}
+            else{$('#login_btn').addClass('focus-btn').removeClass('default-btn');}
+    }
+    pnull('.input-text');
+    $('.input-text').bind('input',function(event) {
+        pnull('.input-text');
+    })
